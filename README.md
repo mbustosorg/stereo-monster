@@ -8,6 +8,6 @@ A simple application to control a servo motor in my house to turn our old stereo
 * Display ambiant noise levels to make sure that music is playing
 
 ## Credits
-* [Spark.io Forum](http://devcenter.heroku.com/articles/buildpacks)
-* [Bootstrap]()
+* [Spark.io Forum](https://community.spark.io)
+* [Bootstrap](http://getbootstrap.com/components/)
 
