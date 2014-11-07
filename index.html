@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- <link rel="shortcut icon" href="/media/favicon.png"> -->
+
+	<title>Stereo Monster</title>
+
+	<link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/jumbotron-narrow.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+	
+	<link rel="icon" type="image/ico" href="./images/favicon.ico" />
+  </head>
+
+  <body>
+	<div class="container">
+
+	  <div class="header">
+		<ul class="nav nav-pills pull-right hidden-xs">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="https://www.spark.io/build/544d6f9830d939469b000121">Device</a></li>
+		  <li><a href="https://github.com/mbustosorg/stereoMonster">Code</a></li>
+		</ul>
+		<h3 class="text-muted">Stereo Monster</h3>
+	  </div>
+
+	  <div id="connection-in-progress" class="alert alert-warning hide">
+		Connecting...
+	  </div>
+
+	  <div id="connection-error" class="alert alert-danger hide">
+		Connection error!
+	  </div>
+
+	  <div id="connection-closed" class="jumbotron hide">
+		<h3>Connection closed.</h3>
+		<p><button class="btn btn-lg btn-primary connect-button">Reconnect</button></p>
+	  </div>
+	  <div id="spark-login" />
+	  <div id="connection-complete" class="jumbotron hide">
+
+		<div class="panel panel-primary">
+		  <!-- <div class="panel-heading">Connected</div> -->
+		  <div class="panel-body">
+		  
+			<button type="button" id="toggle-button" class="btn btn-default btn-sm">Toggle</button>
+			<input type="range" id="degree-range" min="0" max="180" step="1" value="90" list="myData">
+			<!-- This adds the tick marks to the range but does not in Safari -->
+			<datalist id="myData">
+			   <option value="0">
+			   <option value="30">
+			   <option value="60">
+			   <option value="90">
+			   <option value="120">
+			   <option value="150">
+			   <option value="180">
+			</datalist>
+			<div class="btn-group">
+			  <button type="button" id="fine-adjust-down" class="btn btn-default btn-sm">&lArr; -5 &deg;</button>
+			  <button type="button" id="fine-adjust-up" class="btn btn-default btn-sm">+5 &deg; &rArr;</button>
+			</div>
+			<p>Current Position: <span id="current-position" class="label label-default">0</span></p>
+		  </div>
+		  <div id="no-devices-connected" class="panel-body hide">
+			<p><strong>No devices are connected!</strong></p>
+			<p>If you plug in a Fadecandy board, it will appear here.</p>
+		  </div>
+		  <ul id="devices-list" class="list-group"></ul>
+		</div>
+
+		<div class="panel panel-info hide">
+		  <div class="panel-heading">Server Info</div>
+		  <div class="panel-body">
+			<!--<img src="/media/favicon.png" class="hidden-xs pull-right" alt="Fc Icon">-->
+			<p>Connected to <code id="server-url"></code></p>
+			<p>Server software version <code id="server-version"></code></p>
+			<p>Server configuration JSON:</p>
+			<pre id="server-config" class="json"></pre>
+		  </div>
+		</div>
+
+	  </div>
+
+	  <div id="browser-not-supported" class="jumbotron">
+		<h1>Browser not supported</h1>
+		<p class="lead">
+		  This browser is missing some important features. This page uses HTML5 and
+		  JavaScript, and we require WebSockets.
+		</p>
+		<p><a class="btn btn-lg btn-primary" href="https://google.com/chrome" role="button">Maybe try Chrome?</a></p>
+	  </div>
+
+	  <div class="footer">
+		<p>&copy; mbustosorg 2014</p>
+	  </div>
+
+	</div>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/sparkjs/0.2.0/spark.min.js"></script>
+	<script src="./dist/js/jquery-1.11.1.js"></script>
+	<script src="./dist/js/bootstrap.min.js"></script>
+	<script src="./js/home.js"></script>
+  </body>
+</html>
